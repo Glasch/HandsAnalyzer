@@ -10,9 +10,13 @@ import java.util.stream.Stream;
  * Created: 29.09.2018
  */
 public class HandParser {
+    private static final String HAND_LINE_START = "PokerStars Hand";
+    private static final String TABLE_LINE_END = "is the button";
+    private static final String PLAYER_LINE_END = "in chips)";
+    private static final String LINES_SEPARATOR = " ";
     private String path;
 
-    public HandParser(String path) {
+    HandParser(String path) {
         this.path = path;
     }
 
@@ -22,19 +26,17 @@ public class HandParser {
         Stream<String> streamFromFiles = Files.lines(Paths.get(path));
         streamFromFiles
                 .forEach(s -> {
-                            String[] line = s.split(" ");
-                            if (s.startsWith("PokerStars Hand")) {
+                            String[] line = s.split(LINES_SEPARATOR);
+                            if (s.startsWith(HAND_LINE_START)) {
                                 hand.setId(line[2].substring(1, line.length));
-                                System.out.println(hand.getId());
                                 hand.setLimit(Float.parseFloat(line[7].substring(8, 12)));
-                                System.out.println(hand.getLimit());
                                 hand.setDate(line[10] + " " + line[11] + " " + line[12]);
                             }else
-                            if (s.endsWith("is the button")) {
+                            if (s.endsWith(TABLE_LINE_END)) {
                                 hand.setSize(Integer.parseInt(line[3].substring(0,1)));
                                 hand.setButtonSeat(Integer.parseInt(line[5].substring(1,2)));
                             }else
-                            if (s.endsWith("in chips)")){
+                            if (s.endsWith(PLAYER_LINE_END)){
                                 hand.getPlayers().put(
                                         Position.findPosition(hand.getButtonSeat(),
                                                 Integer.parseInt(line[1].substring(0,1))), new Player(line[2],

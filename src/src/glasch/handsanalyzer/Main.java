@@ -11,6 +11,6 @@ public class Main {
     public static void main(String[] args) throws IOException {
         HandParser parser = new HandParser("src/hand");
         Hand hand = parser.parse();
-        System.out.println("hand = " + hand);
+        System.out.println(hand);
     }
 }

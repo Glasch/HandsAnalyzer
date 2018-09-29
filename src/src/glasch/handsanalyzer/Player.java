@@ -11,4 +11,17 @@ public class Player {
         this.nickname = nickname;
         this.stake = stake;
     }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public Float getStake() {
+        return stake;
+    }
+
+    @Override
+    public String toString() {
+        return nickname + ", stake: " + stake;
+    }
 }

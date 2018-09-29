@@ -21,49 +21,65 @@ public class Hand {
     //  Players and Stakes
     private   Map<Position,Player> players = new HashMap <>();
 
-    Hand parse() throws IOException {
-        Hand hand = new Hand();
-
-        Stream <String> streamFromFiles = Files.lines(Paths.get("src/hand"));
-        streamFromFiles
-                .forEach(s -> {
-                            String[] line = s.split(" ");
-                            if (s.startsWith("PokerStars glasch.handsanalyzer.Hand")) {
-                                hand.id = line[2].substring(1, line.length);
-                                System.out.println(hand.id);
-                                hand.limit = Float.parseFloat(line[7].substring(8, 12));
-                                System.out.println(hand.limit);
-                                hand.date = line[10] + " " + line[11] + " " + line[12];
-                                System.out.println(hand.date);
-                            }else
-                            if (s.endsWith("is the button")) {
-                                hand.size = Integer.parseInt(line[3].substring(0,1));
-                                System.out.println(hand.size);
-                                hand.buttonSeat = Integer.parseInt(line[5].substring(1,2));
-                                System.out.println(hand.buttonSeat);
-                            }else
-                            if (s.endsWith("in chips)")){
-                                players.put(Position.findPosition(hand.buttonSeat, Integer.parseInt(line[1].substring(0,1))), new Player(line[2], Float.parseFloat(validateStake(line))));
-                            }
-
-
-                        }
-                );
-        System.out.println(players);
-        return hand;
+    public String getId() {
+        return id;
     }
 
-    private String validateStake(String[] line)  {
-        if (line[3].length() < 6 ){
-            return line[3].substring(2,4);
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Float getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Float limit) {
+        this.limit = limit;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public Integer getSize() {
+        return size;
+    }
+
+    public void setSize(Integer size) {
+        this.size = size;
+    }
+
+    public Integer getButtonSeat() {
+        return buttonSeat;
+    }
+
+    public void setButtonSeat(Integer buttonSeat) {
+        this.buttonSeat = buttonSeat;
+    }
+
+    public Map<Position, Player> getPlayers() {
+        return players;
+    }
+
+    public void setPlayers(Map<Position, Player> players) {
+        this.players = players;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder res = new StringBuilder("Hand id=" + id +
+                "\nlimit=" + limit +
+                "\ndate='" + date + '\'' +
+                "\nsize=" + size +
+                "\nbuttonSeat=" + buttonSeat +
+                "\nPlayers:");
+        for (Position position : players.keySet()) {
+            res.append("\n").append(position).append(" ").append(players.get(position));
         }
-        return line[3].substring(2,7);
+        return res.toString();
     }
-
-
-    public static void main(String[] args) throws IOException {
-        Hand hand = new Hand();
-        hand.parse();
-    }
-
 }

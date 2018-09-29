@@ -1,3 +1,5 @@
+package glasch.handsanalyzer;
+
 /**
  * Copyright (c) Anton on 27.09.2018.
  */

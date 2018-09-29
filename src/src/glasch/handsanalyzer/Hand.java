@@ -1,7 +1,8 @@
+package glasch.handsanalyzer;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Stream;
@@ -27,7 +28,7 @@ public class Hand {
         streamFromFiles
                 .forEach(s -> {
                             String[] line = s.split(" ");
-                            if (s.startsWith("PokerStars Hand")) {
+                            if (s.startsWith("PokerStars glasch.handsanalyzer.Hand")) {
                                 hand.id = line[2].substring(1, line.length);
                                 System.out.println(hand.id);
                                 hand.limit = Float.parseFloat(line[7].substring(8, 12));

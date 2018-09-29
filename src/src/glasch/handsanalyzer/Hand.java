@@ -3,8 +3,7 @@ package glasch.handsanalyzer;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Stream;
 
 /**
@@ -77,7 +76,10 @@ public class Hand {
                 "\nsize=" + size +
                 "\nbuttonSeat=" + buttonSeat +
                 "\nPlayers:");
-        for (Position position : players.keySet()) {
+        List<Position> positions = new ArrayList<>(players.keySet());
+        Collections.sort(positions);
+
+        for (Position position : positions) {
             res.append("\n").append(position).append(" ").append(players.get(position));
         }
         return res.toString();

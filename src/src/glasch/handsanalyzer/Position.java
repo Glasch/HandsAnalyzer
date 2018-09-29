@@ -12,13 +12,10 @@ public enum Position {
         this.position = position;
     }
 
-    static Position findPosition(Integer buttonSeat, Integer seat) {
-        Integer position = seat - buttonSeat;
-        if(position < 0) position = 6 + position;
-
+    static Position fromSeatNumber(Integer seatNumber) {
         for (Position each : values()) {
-            if(each.position == position) return each;
+            if(each.position == seatNumber) return each;
         }
-        throw new IllegalStateException("Unexpected position: " + position);
+        throw new IllegalStateException("Unexpected seatNumber: " + seatNumber);
     }
 }

@@ -1,40 +1,47 @@
-PokerStars Hand #191547805484:  Hold'em No Limit ($0.10/$0.25 USD) - 2018/09/27 15:45:34 ET
-Table 'Euryanthe II' 6-max Seat #4 is the button
-Seat 1: Dragos860 ($24.82 in chips)
-Seat 2: acegard ($37.13 in chips)
-Seat 3: fishikegirl6 ($32.07 in chips)
-Seat 4: A.Glasch ($26.82 in chips)
-Seat 5: LUGIMONSTER ($26.67 in chips)
-Seat 6: Pewbie ($26 in chips)
-LUGIMONSTER: posts small blind $0.10
-Pewbie: posts big blind $0.25
+PokerStars Hand #191619072385:  Hold'em No Limit ($0.10/$0.25 USD) - 2018/09/29 14:40:39 ET
+Table 'Tabora II' 6-max Seat #3 is the button
+Seat 1: muugii1313 ($26.87 in chips)
+Seat 2: nikolasiks ($56.53 in chips)
+Seat 3: WarllocK1982 ($26.34 in chips)
+Seat 4: Manifestorr ($28.56 in chips)
+Seat 5: A.Glasch ($32.93 in chips)
+Seat 6: r0y4lf1us4 ($29.83 in chips)
+Manifestorr: posts small blind $0.10
+A.Glasch: posts big blind $0.25
 *** HOLE CARDS ***
-Dealt to A.Glasch [9h Kh]
-Dragos860: folds
-acegard: folds
-fishikegirl6: folds
-A.Glasch: raises $0.37 to $0.62
-LUGIMONSTER: calls $0.52
-Pewbie: raises $2.63 to $3.25
-A.Glasch: calls $2.63
-A.Glasch is disconnected
-LUGIMONSTER: folds
-*** FLOP *** [4d 7h 5c]
-Pewbie: bets $2.11
-A.Glasch is connected
-A.Glasch: calls $2.11
-*** TURN *** [4d 7h 5c] [9s]
-Pewbie: checks
-A.Glasch: bets $3.57
-Pewbie: folds
-Uncalled bet ($3.57) returned to A.Glasch
-A.Glasch collected $10.83 from pot
+Dealt to A.Glasch [3h 3s]
+r0y4lf1us4: folds
+muugii1313: raises $0.32 to $0.57
+nikolasiks: calls $0.57
+WarllocK1982: folds
+Manifestorr: folds
+A.Glasch: calls $0.32
+*** FLOP *** [5s 4c 2h]
+A.Glasch: checks
+muugii1313: bets $0.61
+nikolasiks: folds
+A.Glasch: calls $0.61
+*** TURN *** [5s 4c 2h] [7s]
+A.Glasch: checks
+muugii1313: bets $0.50
+A.Glasch: calls $0.50
+*** RIVER *** [5s 4c 2h 7s] [Ah]
+A.Glasch: checks
+muugii1313: checks
+*** SHOW DOWN ***
+A.Glasch: shows [3h 3s] (a straight, Ace to Five)
+muugii1313: mucks hand
+A.Glasch collected $3.85 from pot
 *** SUMMARY ***
-Total pot $11.34 | Rake $0.51
-Board [4d 7h 5c 9s]
-Seat 1: Dragos860 folded before Flop (didn't bet)
-Seat 2: acegard folded before Flop (didn't bet)
-Seat 3: fishikegirl6 folded before Flop (didn't bet)
-Seat 4: A.Glasch (button) collected ($10.83)
-Seat 5: LUGIMONSTER (small blind) folded before Flop
-Seat 6: Pewbie (big blind) folded on the Turn
+Total pot $4.03 | Rake $0.18
+Board [5s 4c 2h 7s Ah]
+Seat 1: muugii1313 mucked [Jc As]
+Seat 2: nikolasiks folded on the Flop
+Seat 3: WarllocK1982 (button) folded before Flop (didn't bet)
+Seat 4: Manifestorr (small blind) folded before Flop
+Seat 5: A.Glasch (big blind) showed [3h 3s] and won ($3.85) with a straight, Ace to Five
+Seat 6: r0y4lf1us4 folded before Flop (didn't bet)
+
+
+
+

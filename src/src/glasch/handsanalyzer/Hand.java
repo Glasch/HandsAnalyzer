@@ -1,24 +1,20 @@
 package glasch.handsanalyzer;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.*;
-import java.util.stream.Stream;
 
 /**
  * Copyright (c) Anton on 12.09.2018.
  */
 public class Hand {
-    // Room + Limit
     private String id;
     private Float limit;
     private String date;
-    // Table + BTN
     private Integer size;
     private Integer buttonSeat;
-    //  Players and Stakes
-    private   Map<Position,Player> players = new HashMap <>();
+    private Map <Position, Player> players = new HashMap <>();
+
+    private Map <Player, Float> postingRound = new HashMap <>();
+    private FirstRound firstRoundAction;
 
     public String getId() {
         return id;
@@ -60,12 +56,28 @@ public class Hand {
         this.buttonSeat = buttonSeat;
     }
 
-    public Map<Position, Player> getPlayers() {
+    public Map <Position, Player> getPlayers() {
         return players;
     }
 
-    public void setPlayers(Map<Position, Player> players) {
+    public void setPlayers(Map <Position, Player> players) {
         this.players = players;
+    }
+
+    public Map <Player, Float> getPostingRound() {
+        return postingRound;
+    }
+
+    public void setPostingRound(Map <Player, Float> postingRound) {
+        this.postingRound = postingRound;
+    }
+
+    public FirstRound getFirstRoundAction() {
+        return firstRoundAction;
+    }
+
+    public void setFirstRoundAction(FirstRound firstRoundAction) {
+        this.firstRoundAction = firstRoundAction;
     }
 
     @Override
@@ -76,12 +88,14 @@ public class Hand {
                 "\nsize=" + size +
                 "\nbuttonSeat=" + buttonSeat +
                 "\nPlayers:");
-        List<Position> positions = new ArrayList<>(players.keySet());
+        List <Position> positions = new ArrayList <>(players.keySet());
         Collections.sort(positions);
 
         for (Position position : positions) {
             res.append("\n").append(position).append(" ").append(players.get(position));
         }
+
         return res.toString();
+
     }
 }

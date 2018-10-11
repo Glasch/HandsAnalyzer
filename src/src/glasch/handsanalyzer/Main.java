@@ -12,5 +12,6 @@ public class Main {
         HandParser parser = new HandParser("src/hand");
         Hand hand = parser.parse();
         System.out.println(hand);
+
     }
 }

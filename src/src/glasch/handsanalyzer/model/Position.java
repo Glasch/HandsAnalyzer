@@ -1,4 +1,4 @@
-package glasch.handsanalyzer;
+package glasch.handsanalyzer.model;
 
 /**
  * Copyright (c) Anton on 27.09.2018.
@@ -12,7 +12,7 @@ public enum Position {
         this.position = position;
     }
 
-    static Position fromSeatNumber(Integer seatNumber) {
+    public static Position fromSeatNumber(Integer seatNumber) {
         for (Position each : values()) {
             if(each.position == seatNumber) return each;
         }

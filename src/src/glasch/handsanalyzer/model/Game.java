@@ -1,20 +1,33 @@
-package glasch.handsanalyzer;
+package glasch.handsanalyzer.model;
+
+import glasch.handsanalyzer.decisiontree.FirstRound;
 
 import java.util.*;
 
 /**
  * Copyright (c) Anton on 12.09.2018.
  */
-public class Hand {
+public class Game {
     private String id;
     private Float limit;
     private String date;
     private Integer size;
     private Integer buttonSeat;
-    private Map <Position, Player> players = new HashMap <>();
+    private List<Player> players = new ArrayList<>();
+    private List<PlayerAction> playerActions = new ArrayList<>();
+    private String hero;
 
-    private Map <Player, Float> postingRound = new HashMap <>();
-    private FirstRound firstRoundAction;
+    public Game(String hero) {
+        this.hero = hero;
+    }
+
+    public List<PlayerAction> getPlayerActions() {
+        return playerActions;
+    }
+
+    public void setPlayerActions(List<PlayerAction> playerActions) {
+        this.playerActions = playerActions;
+    }
 
     public String getId() {
         return id;
@@ -56,29 +69,15 @@ public class Hand {
         this.buttonSeat = buttonSeat;
     }
 
-    public Map <Position, Player> getPlayers() {
+
+    public List<Player> getPlayers() {
         return players;
     }
 
-    public void setPlayers(Map <Position, Player> players) {
+    public void setPlayers(ArrayList<Player> players) {
         this.players = players;
     }
 
-    public Map <Player, Float> getPostingRound() {
-        return postingRound;
-    }
-
-    public void setPostingRound(Map <Player, Float> postingRound) {
-        this.postingRound = postingRound;
-    }
-
-    public FirstRound getFirstRoundAction() {
-        return firstRoundAction;
-    }
-
-    public void setFirstRoundAction(FirstRound firstRoundAction) {
-        this.firstRoundAction = firstRoundAction;
-    }
 
     @Override
     public String toString() {
@@ -87,12 +86,14 @@ public class Hand {
                 "\ndate='" + date + '\'' +
                 "\nsize=" + size +
                 "\nbuttonSeat=" + buttonSeat +
-                "\nPlayers:");
-        List <Position> positions = new ArrayList <>(players.keySet());
-        Collections.sort(positions);
+                "\nPlayers: ");
 
-        for (Position position : positions) {
-            res.append("\n").append(position).append(" ").append(players.get(position));
+        for (Player player : players) {
+            res.append("\n").append(player);
+        }
+        res.append("\nActions :");
+        for (PlayerAction playerAction : playerActions) {
+            res.append("\n").append(playerAction);
         }
 
         return res.toString();
